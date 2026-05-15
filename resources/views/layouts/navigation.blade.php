@@ -2,15 +2,8 @@
     <div class="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col gap-4 py-4 lg:flex-row lg:items-center lg:justify-between">
             <div class="flex items-center gap-4">
-                <a href="{{ route('dashboard') }}" class="flex items-center gap-3">
-                    <div class="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/5 text-sm font-semibold text-zinc-100 shadow-lg shadow-black/20">
-                        PFC
-                    </div>
-
-                    <div>
-                        <p class="text-xs uppercase tracking-[0.3em] text-zinc-500">Gestion</p>
-                        <p class="text-sm font-semibold text-zinc-100">Jardineria y mantenimiento</p>
-                    </div>
+                <a href="{{ route('dashboard') }}" class="flex items-center">
+                    <x-application-logo class="h-12 w-auto rounded-xl bg-white px-2 py-1" />
                 </a>
 
                 <div class="hidden h-8 w-px bg-white/10 lg:block"></div>

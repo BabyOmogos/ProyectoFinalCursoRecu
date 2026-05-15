@@ -1,0 +1,18 @@
+Nombre,Comienzo,Fin,Duracion,Depende de
+Comienzo del proyecto,14/04/2026,14/04/2026,0,
+Diseño e implementación de la aplicación web,14/04/2026,16/04/2026,3,Comienzo del proyecto
+Estructuración del proyecto,14/04/2026,15/04/2026,2,Diseño e implementación de la aplicación web
+Configuración del entorno de desarrollo,16/04/2026,16/04/2026,1,Estructuración del proyecto
+Diseño de la base de datos,17/04/2026,18/04/2026,2,Diseño e implementación de la aplicación web
+Desarrollo de la página pública,21/04/2026,23/04/2026,3,Diseño de la base de datos
+Gestión de usuarios y autenticación,24/04/2026,28/04/2026,3,Desarrollo de la página pública
+Control de acceso a secciones restringidas,29/04/2026,29/04/2026,1,Gestión de usuarios y autenticación
+Desarrollo del backend,30/04/2026,05/05/2026,4,Control de acceso a secciones restringidas
+Desarrollo del frontend,06/05/2026,09/05/2026,4,Desarrollo del backend
+Gestión de perfil de usuario,10/05/2026,10/05/2026,1,Desarrollo del frontend
+Administración de usuarios del sistema,11/05/2026,11/05/2026,1,Gestión de perfil de usuario
+Seguridad de la aplicación,12/05/2026,13/05/2026,2,Administración de usuarios del sistema
+Pruebas y validación,12/05/2026,13/05/2026,2,Seguridad de la aplicación
+Despliegue del proyecto,14/05/2026,14/05/2026,1,Pruebas y validación
+Documentación,15/05/2026,15/05/2026,1,Despliegue del proyecto
+Fin del proyecto,15/05/2026,15/05/2026,0,Documentación

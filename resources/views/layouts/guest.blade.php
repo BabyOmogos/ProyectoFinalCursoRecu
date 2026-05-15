@@ -19,15 +19,8 @@
                     <div class="grid h-full lg:grid-rows-[auto_1fr]">
                         <div class="border-b border-[#e6ecdf] bg-[#eff5ea] px-8 py-6">
                             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                                <div class="flex items-center gap-4">
-                                    <div class="grid h-14 w-14 place-items-center rounded-full bg-[#6b8f5d] text-base font-semibold text-white">
-                                        PFC
-                                    </div>
-
-                                    <div>
-                                        <p class="text-xs uppercase tracking-[0.3em] text-[#7f8f79]">Presentacion comercial</p>
-                                        <h1 class="mt-1 text-2xl font-semibold text-[#30442e]">Jardineria y mantenimiento exterior</h1>
-                                    </div>
+                                <div class="flex items-center">
+                                    <x-application-logo class="h-20 w-auto" />
                                 </div>
 
                                 <div class="flex flex-wrap gap-2 text-xs font-medium text-[#5d6f58]">

@@ -1,0 +1,93 @@
+3.1. Planificación de actividades y tareas. Temporización. Diagrama de Gantt
+
+Lista de las tareas necesarias para desarrollar los requisitos anteriores:
+
+Hito: Comienzo del proyecto
+
+1. Diseño e implementación de la aplicación web (RF-01)
+   - Estructuración del proyecto (frontend, backend y base de datos)
+   - Configuración del entorno de desarrollo
+
+2. Diseño de la base de datos (RF-01, RF-03, RF-06)
+   - Creación de migraciones y seeders
+
+3. Desarrollo de la página pública (RF-02)
+   - Maquetación de la vista de inicio, logo, servicios y contacto
+
+4. Gestión de usuarios y autenticación (RF-03, RF-04)
+   - Registro, inicio y cierre de sesión
+   - Recuperación y actualización de contraseña
+
+5. Control de acceso a secciones restringidas (RF-10)
+   - Middleware de permisos y protección de rutas
+
+6. Desarrollo del backend (RF-06, RF-07)
+   - Modelo y controlador de servicios
+   - Validación de datos y conexión con la base de datos
+   - Operaciones CRUD y listado paginado
+
+7. Desarrollo del frontend (RF-05, RF-06, RF-07)
+   - Maquetación del panel y vistas de servicios
+   - Integración con el backend mediante formularios y rutas
+   - Diseño responsive y pruebas en distintos dispositivos
+
+8. Gestión de perfil de usuario (RF-08)
+
+9. Administración de usuarios del sistema (RF-09)
+
+10. Seguridad de la aplicación (RNF-02, RNF-06)
+    - Cifrado de contraseñas y protección CSRF
+    - Validación de formularios y revisión de rutas protegidas
+
+11. Pruebas y validación
+    - Pruebas funcionales e integración
+    - Verificación en navegadores y dispositivos
+
+12. Despliegue del proyecto
+    - Configuración del entorno local (XAMPP)
+    - Puesta en marcha de la aplicación y base de datos
+
+13. Documentación y cierre
+    - Manual de instalación, manual de usuario y memoria del proyecto
+
+Hito: Fin del proyecto
+
+Diagrama de Gantt
+
+El diagrama de Gantt es una herramienta gráfica para planificar y programar tareas a lo largo de un periodo de tiempo. Reproduce gráficamente las tareas, la estimación de su duración y secuencia, además del calendario general del proyecto, y permite realizar el seguimiento y control del progreso de cada etapa.
+
+El cronograma se ha elaborado con las fechas reales del proyecto. El despliegue en entorno local se realizó el 14 de mayo de 2026 y la finalización del proyecto el 15 de mayo de 2026.
+
+[Insertar captura del archivo docs/Diagrama_Gantt_Verde_Exterior.html abierto en el navegador, o importar docs/Gantt_import_GanttProject.csv en GanttProject]
+
+Cronograma resumido
+
+Tarea                              | Inicio     | Fin
+-----------------------------------|------------|------------
+Comienzo del proyecto              | 14/04/2026 | 14/04/2026
+Diseño e implementación app web    | 14/04/2026 | 16/04/2026
+Diseño de la base de datos         | 17/04/2026 | 18/04/2026
+Desarrollo página pública          | 21/04/2026 | 23/04/2026
+Gestión usuarios y autenticación   | 24/04/2026 | 28/04/2026
+Control de acceso                  | 29/04/2026 | 29/04/2026
+Desarrollo del backend             | 30/04/2026 | 05/05/2026
+Desarrollo del frontend            | 06/05/2026 | 09/05/2026
+Gestión de perfil                  | 10/05/2026 | 10/05/2026
+Administración de usuarios         | 11/05/2026 | 11/05/2026
+Seguridad de la aplicación         | 12/05/2026 | 13/05/2026
+Pruebas y validación               | 12/05/2026 | 13/05/2026
+Despliegue del proyecto            | 14/05/2026 | 14/05/2026
+Documentación y cierre             | 15/05/2026 | 15/05/2026
+Fin del proyecto                   | 15/05/2026 | 15/05/2026
+
+Temporización
+
+Fecha prevista de comienzo: 14 de abril de 2026
+
+Fecha de despliegue: 14 de mayo de 2026
+
+Fecha prevista de finalización: 15 de mayo de 2026
+
+Número de días de duración del proyecto: 24 días laborables
+
+Número de horas de duración del proyecto: 192 horas

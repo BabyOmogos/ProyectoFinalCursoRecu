@@ -39,9 +39,7 @@
                 </div>
 
                 <div class="flex flex-1 flex-col items-center justify-center text-center">
-                    <div class="grid h-28 w-28 place-items-center rounded-[28px] border border-white/10 bg-white/[0.03] text-2xl font-semibold text-zinc-100 shadow-xl shadow-black/30">
-                        PFC
-                    </div>
+                    <x-application-logo class="h-32 w-auto rounded-2xl bg-white px-3 py-2" />
 
                     <h3 class="mt-8 text-2xl font-semibold text-zinc-100">{{ Auth::user()->name }}</h3>
                     <p class="mt-2 max-w-xl text-sm leading-7 text-zinc-400">

@@ -1,10 +1,9 @@
-FROM php:8.3-fpm-bookworm
+FROM php:8.3-cli-bookworm
 
 RUN apt-get update && apt-get install -y \
     git \
     curl \
     unzip \
-    nginx \
     libpq-dev \
     libzip-dev \
     && docker-php-ext-install pdo pdo_pgsql pdo_mysql zip \
@@ -21,10 +20,8 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader --no-interaction \
     && npm ci \
     && npm run build \
-    && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
 
-COPY docker/nginx.conf /etc/nginx/sites-available/default
 COPY docker/start.sh /start.sh
 RUN sed -i 's/\r$//' /start.sh docker/00-laravel-deploy.sh \
     && chmod +x /start.sh docker/00-laravel-deploy.sh

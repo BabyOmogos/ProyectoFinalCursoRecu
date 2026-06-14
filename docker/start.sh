@@ -7,4 +7,5 @@ PORT="${PORT:-10000}"
 sed -i "s/listen 8080/listen ${PORT}/" /etc/nginx/sites-available/default
 
 php-fpm -D
+sleep 2
 nginx -g 'daemon off;'

@@ -29,6 +29,22 @@ class DashboardController extends Controller
             ],
         ];
 
+        if ($user->hasRole('usuario')) {
+            $elementosMenu[] = [
+                'titulo' => 'Mis reservas',
+                'descripcion' => 'Consulta el estado de las citas que has solicitado para los servicios.',
+                'route' => route('reservas.mis'),
+            ];
+        }
+
+        if ($user->hasRole(['empleado', 'administrador'])) {
+            $elementosMenu[] = [
+                'titulo' => 'Gestionar reservas',
+                'descripcion' => 'Revisa las solicitudes de los clientes y acepta o rechaza cada reserva.',
+                'route' => route('reservas.index'),
+            ];
+        }
+
         if ($user->hasRole(['empleado', 'administrador'])) {
             $elementosMenu[] = [
                 'titulo' => 'Registrar servicio',

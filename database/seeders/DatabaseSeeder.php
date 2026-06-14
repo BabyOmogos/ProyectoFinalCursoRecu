@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         ], [
             'name' => 'Administrador principal',
             'role' => 'administrador',
-            'password' => Hash::make('password'),
+            'password' => Hash::make('contrasena'),
             'email_verified_at' => now(),
         ]);
 
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         ], [
             'name' => 'Empleado general',
             'role' => 'empleado',
-            'password' => Hash::make('password'),
+            'password' => Hash::make('contrasena'),
             'email_verified_at' => now(),
         ]);
 
@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
         ], [
             'name' => 'Usuario general',
             'role' => 'usuario',
-            'password' => Hash::make('password'),
+            'password' => Hash::make('contrasena'),
             'email_verified_at' => now(),
         ]);
 

@@ -19,6 +19,20 @@
                         Servicios
                     </a>
 
+                    @if (Auth::user()->hasRole('usuario'))
+                        <a href="{{ route('reservas.mis') }}"
+                            class="{{ request()->routeIs('reservas.mis') || request()->routeIs('reservas.create') ? 'border-indigo-400/60 bg-indigo-500/10 text-indigo-200' : 'border-white/10 bg-white/[0.03] text-zinc-300 hover:bg-white/[0.06]' }} rounded-xl border px-4 py-2 text-sm transition">
+                            Mis reservas
+                        </a>
+                    @endif
+
+                    @if (Auth::user()->hasRole(['empleado', 'administrador']))
+                        <a href="{{ route('reservas.index') }}"
+                            class="{{ request()->routeIs('reservas.index') ? 'border-indigo-400/60 bg-indigo-500/10 text-indigo-200' : 'border-white/10 bg-white/[0.03] text-zinc-300 hover:bg-white/[0.06]' }} rounded-xl border px-4 py-2 text-sm transition">
+                            Reservas
+                        </a>
+                    @endif
+
                     @if (Auth::user()->hasRole(['empleado', 'administrador']))
                         <a href="{{ route('trabajos.create') }}"
                             class="{{ request()->routeIs('trabajos.create') ? 'border-indigo-400/60 bg-indigo-500/10 text-indigo-200' : 'border-white/10 bg-white/[0.03] text-zinc-300 hover:bg-white/[0.06]' }} rounded-xl border px-4 py-2 text-sm transition">
@@ -64,6 +78,20 @@
                 class="{{ request()->routeIs('trabajos.*') ? 'border-indigo-400/60 bg-indigo-500/10 text-indigo-200' : 'border-white/10 bg-white/[0.03] text-zinc-300 hover:bg-white/[0.06]' }} rounded-xl border px-4 py-2 text-sm transition">
                 Servicios
             </a>
+
+            @if (Auth::user()->hasRole('usuario'))
+                <a href="{{ route('reservas.mis') }}"
+                    class="{{ request()->routeIs('reservas.mis') || request()->routeIs('reservas.create') ? 'border-indigo-400/60 bg-indigo-500/10 text-indigo-200' : 'border-white/10 bg-white/[0.03] text-zinc-300 hover:bg-white/[0.06]' }} rounded-xl border px-4 py-2 text-sm transition">
+                    Mis reservas
+                </a>
+            @endif
+
+            @if (Auth::user()->hasRole(['empleado', 'administrador']))
+                <a href="{{ route('reservas.index') }}"
+                    class="{{ request()->routeIs('reservas.index') ? 'border-indigo-400/60 bg-indigo-500/10 text-indigo-200' : 'border-white/10 bg-white/[0.03] text-zinc-300 hover:bg-white/[0.06]' }} rounded-xl border px-4 py-2 text-sm transition">
+                    Reservas
+                </a>
+            @endif
 
             @if (Auth::user()->hasRole(['empleado', 'administrador']))
                 <a href="{{ route('trabajos.create') }}"

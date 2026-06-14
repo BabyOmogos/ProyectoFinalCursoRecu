@@ -52,10 +52,22 @@
                             <p class="mt-2 text-xs text-zinc-500">Revisa servicios de tala, poda, limpieza y mantenimiento registrados.</p>
                         </div>
 
-                        <div class="rounded-2xl border border-white/10 bg-white/[0.02] px-5 py-4 text-left">
-                            <p class="text-sm font-medium text-zinc-200">Equipo por rol</p>
-                            <p class="mt-2 text-xs text-zinc-500">La interfaz cambia segun seas cliente, personal de campo o administrador.</p>
-                        </div>
+                        @if (Auth::user()->hasRole('usuario'))
+                            <div class="rounded-2xl border border-white/10 bg-white/[0.02] px-5 py-4 text-left">
+                                <p class="text-sm font-medium text-zinc-200">Mis reservas</p>
+                                <p class="mt-2 text-xs text-zinc-500">Consulta el estado de tus citas solicitadas para los servicios disponibles.</p>
+                            </div>
+                        @elseif (Auth::user()->hasRole(['empleado', 'administrador']))
+                            <div class="rounded-2xl border border-white/10 bg-white/[0.02] px-5 py-4 text-left">
+                                <p class="text-sm font-medium text-zinc-200">Gestionar reservas</p>
+                                <p class="mt-2 text-xs text-zinc-500">Revisa las solicitudes de los clientes y acepta o rechaza cada reserva.</p>
+                            </div>
+                        @else
+                            <div class="rounded-2xl border border-white/10 bg-white/[0.02] px-5 py-4 text-left">
+                                <p class="text-sm font-medium text-zinc-200">Equipo por rol</p>
+                                <p class="mt-2 text-xs text-zinc-500">La interfaz cambia segun seas cliente, personal de campo o administrador.</p>
+                            </div>
+                        @endif
 
                         <div class="rounded-2xl border border-white/10 bg-white/[0.02] px-5 py-4 text-left">
                             <p class="text-sm font-medium text-zinc-200">Control operativo</p>

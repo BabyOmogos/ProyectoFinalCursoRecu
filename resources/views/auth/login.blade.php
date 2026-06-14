@@ -56,15 +56,15 @@
         <div class="mt-3 space-y-3 text-sm text-[#5d6f58]">
             <div class="rounded-2xl border border-white bg-white px-3 py-3">
                 <p class="font-medium text-[#30442e]">Administrador</p>
-                <p class="mt-1">admin@proyecto.test / password</p>
+                <p class="mt-1">admin@proyecto.test / contrasena</p>
             </div>
             <div class="rounded-2xl border border-white bg-white px-3 py-3">
                 <p class="font-medium text-[#30442e]">Empleado</p>
-                <p class="mt-1">empleado@proyecto.test / password</p>
+                <p class="mt-1">empleado@proyecto.test / contrasena</p>
             </div>
             <div class="rounded-2xl border border-white bg-white px-3 py-3">
                 <p class="font-medium text-[#30442e]">Usuario</p>
-                <p class="mt-1">usuario@proyecto.test / password</p>
+                <p class="mt-1">usuario@proyecto.test / contrasena</p>
             </div>
         </div>
     </div>

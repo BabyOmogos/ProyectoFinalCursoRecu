@@ -25,11 +25,19 @@
         </div>
     @endif
 
-    <div class="mb-6 rounded-[28px] border border-white/10 bg-[#30442e] px-5 py-5 shadow-lg shadow-black/10">
-        <p class="text-xs uppercase tracking-[0.25em] text-white/60">Presupuestos</p>
-        <p class="mt-2 text-lg font-semibold text-white">Para solicitar un presupuesto, llama por telefono al <span class="rounded-full bg-white px-3 py-1 text-[#30442e]">000 123 789</span>.</p>
-        <p class="mt-2 text-sm leading-6 text-white/80">Este aviso aparece destacado para que el cliente vea de inmediato que los presupuestos se gestionan por telefono.</p>
-    </div>
+    @if (Auth::user()->hasRole('usuario'))
+        <div class="mb-6 rounded-[28px] border border-emerald-400/20 bg-emerald-500/10 px-5 py-5 shadow-lg shadow-black/10">
+            <p class="text-xs uppercase tracking-[0.25em] text-emerald-200/70">Reservas online</p>
+            <p class="mt-2 text-lg font-semibold text-emerald-100">Puedes reservar cualquier servicio directamente desde las tarjetas de abajo.</p>
+            <p class="mt-2 text-sm leading-6 text-emerald-100/80">Indica tu correo, telefono y la hora deseada. Luego consulta el estado en la pestaña Mis reservas.</p>
+        </div>
+    @else
+        <div class="mb-6 rounded-[28px] border border-white/10 bg-[#30442e] px-5 py-5 shadow-lg shadow-black/10">
+            <p class="text-xs uppercase tracking-[0.25em] text-white/60">Presupuestos</p>
+            <p class="mt-2 text-lg font-semibold text-white">Para solicitar un presupuesto, llama por telefono al <span class="rounded-full bg-white px-3 py-1 text-[#30442e]">000 123 789</span>.</p>
+            <p class="mt-2 text-sm leading-6 text-white/80">Este aviso aparece destacado para que el cliente vea de inmediato que los presupuestos se gestionan por telefono.</p>
+        </div>
+    @endif
 
     <div class="grid gap-6 xl:grid-cols-[minmax(0,1.25fr)_360px]">
         <section class="rounded-[28px] border border-white/10 bg-[#111114] p-6 shadow-2xl shadow-black/20">
@@ -69,6 +77,17 @@
                                 <p class="text-xs uppercase tracking-[0.2em] text-zinc-500">Ubicacion</p>
                                 <p class="mt-1 text-sm font-medium text-zinc-200">{{ $trabajo->ubicacion ?? 'Ubicacion pendiente de indicar' }}</p>
                             </div>
+
+                            @if (Auth::user()->hasRole('usuario'))
+                                <div class="mt-5">
+                                    <a
+                                        href="{{ route('reservas.create', $trabajo) }}"
+                                        class="inline-flex w-full items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-500/20"
+                                    >
+                                        Reservar servicio
+                                    </a>
+                                </div>
+                            @endif
 
                             @if (Auth::user()->hasRole(['empleado', 'administrador']))
                                 <div class="mt-5 flex items-center justify-end gap-3">

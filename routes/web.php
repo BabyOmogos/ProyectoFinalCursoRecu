@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\TrabajoController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +15,16 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/servicios', [TrabajoController::class, 'listar'])->name('trabajos.index');
 
+    Route::middleware('role:usuario')->group(function () {
+        Route::get('/servicios/{trabajo}/reservar', [ReservaController::class, 'crear'])->name('reservas.create');
+        Route::post('/servicios/{trabajo}/reservar', [ReservaController::class, 'guardar'])->name('reservas.store');
+        Route::get('/mis-reservas', [ReservaController::class, 'mis'])->name('reservas.mis');
+    });
+
     Route::middleware('role:empleado,administrador')->group(function () {
+        Route::get('/reservas', [ReservaController::class, 'listar'])->name('reservas.index');
+        Route::patch('/reservas/{reserva}/aceptar', [ReservaController::class, 'aceptar'])->name('reservas.aceptar');
+        Route::patch('/reservas/{reserva}/rechazar', [ReservaController::class, 'rechazar'])->name('reservas.rechazar');
         Route::get('/servicios/crear', [TrabajoController::class, 'crear'])->name('trabajos.create');
         Route::get('/servicios/{trabajo}/editar', [TrabajoController::class, 'editar'])->name('trabajos.edit');
         Route::post('/servicios', [TrabajoController::class, 'guardar'])->name('trabajos.store');

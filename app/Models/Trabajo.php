@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 
 #[Fillable(['imagen', 'precio_hora', 'trabajo', 'ubicacion', 'descripcion'])]
@@ -21,5 +22,10 @@ class Trabajo extends Model
         );
 
         return '/'.implode('/', $segmentos);
+    }
+
+    public function reservas(): HasMany
+    {
+        return $this->hasMany(Reserva::class);
     }
 }

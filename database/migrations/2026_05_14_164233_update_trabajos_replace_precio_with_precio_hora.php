@@ -11,13 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('trabajos', function (Blueprint $table) {
-            $table->renameColumn('precio', 'precio_hora');
-        });
+        if (Schema::hasColumn('trabajos', 'precio') && ! Schema::hasColumn('trabajos', 'precio_hora')) {
+            Schema::table('trabajos', function (Blueprint $table) {
+                $table->renameColumn('precio', 'precio_hora');
+            });
+        }
 
-        Schema::table('trabajos', function (Blueprint $table) {
-            $table->dropColumn('horas');
-        });
+        if (Schema::hasColumn('trabajos', 'horas')) {
+            Schema::table('trabajos', function (Blueprint $table) {
+                $table->dropColumn('horas');
+            });
+        }
     }
 
     /**
